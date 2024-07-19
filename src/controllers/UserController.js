@@ -7,7 +7,6 @@ export const addUser = async (req, res) => {
   try {
 
     const { name, mobileNumber, email, password, userType, image } = req.body;
-    console.log("dcsdc", image)
     // Check if the email or mobileNumber already exists
     const [existingUserEmail, existingUserNumber] = await Promise.all([
       UserModel.findOne({ email }),
@@ -80,7 +79,6 @@ export const deleteUser = async (req, res) => {
 
 // Update user by ID
 export const editUser = async (req, res) => {
-  console.log("call",req.body)
   try {
     const { id } = req.params;
     let user = await UserModel.findById(id)
