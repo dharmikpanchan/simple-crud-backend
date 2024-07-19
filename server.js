@@ -20,7 +20,7 @@ const server = http.createServer(app);
 app.use(express.json());
 app.use('/api/users', userRouter);
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3005;
 
 const appServer = server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
